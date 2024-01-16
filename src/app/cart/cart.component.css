@@ -45,3 +45,40 @@
     width: 90vw;
     margin-top: 5vw;
 }
+/* Default styles for larger screens */
+.loginReq {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .loginReqImg {
+    margin-right: 20px;
+  }
+  
+  .detailsReq {
+    text-align: center;
+  }
+  
+  /* Additional styles for smaller screens using media query */
+  @media (max-width: 768px) {
+    .loginReq {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .loginReqImg {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Styles for the second div */
+  .loginRe {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  /* Add more media queries as needed for different screen sizes */
+  
