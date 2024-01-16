@@ -1,0 +1,47 @@
+.loginReq {
+    margin-top: 6vw;
+    width: 90vw;
+    background-color: #ddd;
+    margin-bottom: 8vw;
+}
+
+.loginReqImg {
+    margin-top: 1.5vw;
+    padding-top: 2vw;
+    width: 60vw;
+    float: left;
+}
+
+.loginReqImg img {
+    width: 80%;
+    float: left;
+}
+
+
+.detailsReq {
+    float: left;
+    margin-top: 4vw;
+    width: 26vw;
+    position: relative;
+    right: 5vw;
+
+}
+
+.detailsReq p a {
+
+    text-decoration: none;
+    color: #2953a9;
+}
+
+.detailsReq button {
+    background-color: #4079eb;
+    padding: .5vw;
+    margin-top: .5vw;
+    position: relative;
+    left: -.5vw;
+}
+
+.loginRe {
+    width: 90vw;
+    margin-top: 5vw;
+}

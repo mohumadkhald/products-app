@@ -1,1 +1,26 @@
-<p>product-card works!</p>
+<div class="col h-100">
+  <div class="card m-3 h-100">
+    <p style="border-radius: 20px;" class="bg-primary text-center m-2 p-2 col-md-3 text-light" *ngIf="productItem.stock > 0; else outStock">In Stock
+    </p>
+    <ng-template #outStock>
+      <p style="border-radius: 20px;" class="bg-danger m-2 p-2 col-md-5 text-center text-light">Out of Stock</p>
+    </ng-template>
+
+    <img class="p-4 img-fluid" src="{{productItem.thumbnail}}" (click)="redirectToDetails(productItem.id)" alt="{{productItem.title}}">
+
+    <div class="card-body">
+      <div class="row">
+        <h5 class="card-title col-md-6" style="cursor: pointer;" (click)="redirectToDetails(productItem.id)">{{productItem.title}}</h5>
+        <p class="card-text offset-2 col-md-4">{{ productItem.price | currency }}</p>
+      </div>
+      <p class="card-text">{{productItem.description}}</p>
+    </div>
+
+    <div class="m-2 row">
+      <button class="btn btn-primary btn-block col-md-5 m-2" (click)="addToCart(productItem)">Add to Cart</button>
+      <p class="card-text  mt-3 col-md-6">
+        <app-star-rating [rating]="productItem.rating"></app-star-rating>
+      </p>
+    </div>
+  </div>
+</div>
