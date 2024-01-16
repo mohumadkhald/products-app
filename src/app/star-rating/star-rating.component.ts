@@ -12,15 +12,15 @@ import { Component, Input } from '@angular/core';
       <i class="fas fa-star static-star" *ngFor="let _ of [1, 2, 3, 4, 5]"></i>
       <!-- Dynamic stars with ngClass -->
       <ng-container *ngFor="let _ of [1, 2, 3, 4, 5]; let i = index">
-        <i class="fas dynamic-star" [ngClass]="{'fa-star': i < rating, 'fa-star-o': i >= rating}"></i>
+        <i class="fas dynamic-star" [ngClass]="{'fa-star': i < roundedRating, 'fa-star-o': i >= roundedRating}"></i>
       </ng-container>
    </div>
    `,
   styles: [
     `
       .star-rating {
-      display: flex; /* Ensure stars are aligned in a row */
-      align-items: center; /* Align stars vertically */
+        display: flex; /* Ensure stars are aligned in a row */
+        align-items: center; /* Align stars vertically */
       }
 
       .static-star,
@@ -32,12 +32,26 @@ import { Component, Input } from '@angular/core';
       .dynamic-star {
         color: green;
         position: relative;
-        left: -116px
+        left: -116px;
       }
     `,
   ],
-  imports: [CommonModule]
+  imports: [CommonModule],
 })
 export class StarRatingComponent {
-  @Input() rating: number = 1;
+  private _rating: number = 0.5;
+
+  @Input()
+  set rating(value: number) {
+    // Round the rating to the nearest whole number
+    this._rating = Math.round(value);
+  }
+
+  get rating(): number {
+    return this._rating;
+  }
+
+  get roundedRating(): number {
+    return Math.round(this._rating);
+  }
 }
