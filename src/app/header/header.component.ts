@@ -1,4 +1,4 @@
-import { AfterContentChecked, AfterViewChecked, Component, HostListener } from '@angular/core';
+import { AfterContentChecked, Component, HostListener } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { QuantityService } from '../services/counter.service';
 

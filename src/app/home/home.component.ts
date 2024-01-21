@@ -11,7 +11,7 @@ import { ProductsService } from '../services/products.service';
     imports: [NgClass,NgStyle,NgFor,NgIf,ProductCardComponent]
 })
 export class HomeComponent implements OnInit {
-
+  title = 'Home';
   products !: Product[];
 
   constructor(private ProductsService : ProductsService){}
