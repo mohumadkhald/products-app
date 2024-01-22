@@ -1,8 +1,8 @@
 .loginReq {
-    margin-top: 6vw;
+    margin-top: 2vw;
     width: 90vw;
     background-color: #ddd;
-    margin-bottom: 8vw;
+    margin-bottom: 5vw;
 }
 
 .loginReqImg {
@@ -43,14 +43,12 @@
 
 .loginRe {
     width: 90vw;
-    margin-top: 5vw;
 }
 /* Default styles for larger screens */
 .loginReq {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
   }
   
   .loginReqImg {

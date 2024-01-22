@@ -1,12 +1,12 @@
-<div class="col h-100">
-  <div class="card m-3 h-100">
+<div class="col h-50">
+  <div style="height: 33rem;" class="card m-3">
     <p style="border-radius: 20px;" class="bg-primary text-center m-2 p-2 col-md-3 text-light" *ngIf="productItem.stock > 0; else outStock">In Stock
     </p>
     <ng-template #outStock>
       <p style="border-radius: 20px;" class="bg-danger m-2 p-2 col-md-5 text-center text-light">Out of Stock</p>
     </ng-template>
 
-    <img class="p-4 img-fluid" src="{{productItem.thumbnail}}" (click)="redirectToDetails(productItem.id)" alt="{{productItem.title}}">
+    <img style="height: 240px;" class="p-4 img-fluid" src="{{productItem.thumbnail}}" (click)="redirectToDetails(productItem.id)" alt="{{productItem.title}}">
 
     <div class="card-body">
       <div class="row">

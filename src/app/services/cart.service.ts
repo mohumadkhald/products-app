@@ -5,7 +5,7 @@ import { Injectable, HostListener, OnInit } from '@angular/core';
 })
 export class CartService implements OnInit {
   ngOnInit(): void {
-    this.getCart()
+    this.getCart();
   }
   totalprice: number = 0;
   private cart: { product: any; quantity: number }[] = [];
@@ -30,7 +30,9 @@ export class CartService implements OnInit {
   }
 
   addToCart(product: any): void {
-    const existingItem = this.cart.find((item) => item.product.id === product.id);
+    const existingItem = this.cart.find(
+      (item) => item.product.id === product.id
+    );
     if (existingItem) {
       existingItem.quantity++;
     } else {
@@ -42,18 +44,21 @@ export class CartService implements OnInit {
 
   removeFromCart(product: any): void {
     const index = this.cart.findIndex((item) => item.product.id === product.id);
-
     if (index !== -1) {
       const item = this.cart[index];
-      if (item.quantity > 0) {
+      if (item.quantity > 1) {
+        this.cart.splice(index, 1);
+      } else {
         this.cart.splice(index, 1);
       }
+
       this.updateLocalStorage();
     }
   }
-
   increaseQuantity(product: any): void {
-    const existingItem = this.cart.find((item) => item.product.id === product.id);
+    const existingItem = this.cart.find(
+      (item) => item.product.id === product.id
+    );
 
     if (existingItem) {
       existingItem.quantity++;
@@ -63,14 +68,27 @@ export class CartService implements OnInit {
   }
 
   decreaseQuantity(product: any): void {
-    const existingItem = this.cart.find((item) => item.product.id === product.id);
-
+    const existingItem = this.cart.find(
+      (item) => item.product.id === product.id
+    );
+  
     if (existingItem && existingItem.quantity > 0) {
       existingItem.quantity--;
       this.updateTotalPriceAndQuantity();
       this.updateLocalStorage();
+      const index = this.cart.findIndex(
+        (item) => item.product.id === product.id
+      );
+      if (index !== -1) {
+        const item = this.cart[index];
+        if (item.quantity == 0) { // Corrected the condition here
+          this.cart.splice(index, 1);
+        }
+        this.updateLocalStorage();
+      }
     }
   }
+  
 
   clearCart(): void {
     this.cart = [];

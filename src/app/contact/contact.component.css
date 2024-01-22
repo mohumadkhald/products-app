@@ -6,8 +6,11 @@
     padding: 30px 40px;
     background-color: #ffffff;
     border-radius: 12px;
-    max-width: 400px;
+    width: 600px;
+    border: 1px solid rgb(183, 176, 176);
+    padding-bottom: 10vh;
   }
+  
   
   .contact-form textarea {
     resize: none;
@@ -15,19 +18,23 @@
   
   .contact-form .form-input,
   .form-text-area {
-    background-color: #f0f4f5;
+    background-color: #dbe4e6;
     height: 50px;
     padding-left: 16px;
   }
+  .btn-block {
+    display: block;
+    width: 100%;
+  }
   
   .contact-form .form-text-area {
-    background-color: #f0f4f5;
+    background-color: #DBE4E6;
     height: auto;
     padding-left: 16px;
   }
   
   .contact-form .form-control::placeholder {
-    color: #aeb4b9;
+    color: #8d9194;
     font-weight: 500;
     opacity: 1;
   }
