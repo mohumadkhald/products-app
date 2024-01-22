@@ -18,6 +18,6 @@ export const routes: Routes = [
     { path: 'sign-up', component: SignUpComponent},
     { path: 'product-details/:id',component: ProductDetailsComponent},
     { path: 'cart',component: CartComponent},
-    { path: 'not-found', component: NotfoundComponent},
-    { path: '**', redirectTo: '/not-found' }
+    { path: 'notfound', component: NotfoundComponent},
+    { path: '**', redirectTo: '/notfound' }
 ];
