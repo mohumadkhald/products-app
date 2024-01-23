@@ -1,25 +1,25 @@
 <div class="col">
-  <div style="height: 32rem;" class="card">
+  <div style="height: 28rem;" class="card">
     <p style="border-radius: 20px;" class="bg-primary text-center col-3 m-2 col-md-3 text-light" *ngIf="productItem.stock > 0; else outStock">In Stock
     </p>
     <ng-template #outStock>
       <p style="border-radius: 20px;" class="bg-danger m-2 p-2 col-md-5 text-center text-light">Out of Stock</p>
     </ng-template>
 
-    <img style="height: 250px;" class="img-fluid p-3" src="{{productItem.thumbnail}}" (click)="redirectToDetails(productItem.id)" alt="{{productItem.title}}">
+    <img style="height: 240px; max-height: 260;" class="img-fluid p-3" src="{{productItem.thumbnail}}" (click)="redirectToDetails(productItem.id)" alt="{{productItem.title}}">
 
-    <div class="m-3">
+    <div class="m-2 p-2">
       <div class="row">
         <h5 class="card-title col-8 col-md-8" style="cursor: pointer;" (click)="redirectToDetails(productItem.id)">{{productItem.title}}</h5>
-        <p class="card-text col-3 offset-0 col-md-4">{{ productItem.price | currency }}</p>
+        <p class="card-text col-4 col-md-4">{{ productItem.price | currency }}</p>
       </div>
-      <p style="height: 45px; overflow: hidden;" class="card-text">{{productItem.description}}</p>
+      <p style="height: 45px; overflow: hidden;" class="card-text me-1">{{productItem.description}}</p>
     </div>
 
-    <div style="" class="row p-2 mb-3 m-2">
-      <button class="btn btn-primary col-5 btn-block col-sm-5 col-md-5" (click)="addToCart(productItem)">Add to Cart</button>
-      <p class="card-text col-6 col-md-6 mt-1 col-sm-6 offset-1">
-        <ngb-rating class="card-text mb-2 me-3" [rate]="productItem.rate" />  
+    <div style="margin-left: 15px;" class="row mb-5">
+      <button style="width: 30;" class="btn btn-primary col-5 col-sm-6 col-md-5" (click)="addToCart(productItem)">Add to Cart</button>
+      <p class="card-text col-6 col-md-7 col-sm-6 ">
+        <ngb-rating class="card-text mt-1" [rate]="productItem.rating" />  
       </p>
     </div>
   </div>
