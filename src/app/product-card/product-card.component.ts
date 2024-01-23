@@ -3,12 +3,13 @@ import { CommonModule, NgClass, NgIf, NgStyle } from '@angular/common';
 import { StarRatingComponent } from "../star-rating/star-rating.component";
 import { Router } from '@angular/router';
 import { CartService } from '../services/cart.service';
+import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 @Component({
     selector: 'app-product-card',
     standalone: true,
     templateUrl: './product-card.component.html',
     styleUrl: './product-card.component.css',
-    imports: [CommonModule, NgClass, NgStyle, NgIf, StarRatingComponent, ]
+    imports: [CommonModule, NgClass, NgStyle, NgIf, StarRatingComponent, NgbRatingModule]
 })
 export class ProductCardComponent implements OnInit {
   @Input() productItem : any ;
